@@ -1,0 +1,44 @@
+.abilities li  {
+  display: block;
+
+  .ability {
+    margin: 15px;
+    font-size: 20px;
+    display: block;
+    justify-content: space-around;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.top {
+  margin: 10px;
+  padding: 10px;
+
+  .search-bar {
+    margin-right: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-color: rgb(164, 18, 35);
+  }
+
+  .enter {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(164, 18, 35);
+    color: rgb(252, 236, 236);
+    font-size: 20px;
+
+    &:hover {
+      background-color: #201693;
+      color: #e1deff;
+    }
+  }
+}
+
+h2 {
+  margin: 10px;
+  padding: 10px;
+}

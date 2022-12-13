@@ -1,0 +1,17 @@
+<div class="top">
+  <input class="search-bar" #name placeholder="Search a Pokemon">
+  <button class="enter" (click)="getPokemon(name.value)"> Enter </button>
+</div>
+
+<div class="abilities">
+  <h2> Abilities </h2>
+  <li *ngFor="let ability of poke?.abilities">
+    <div class="ability">
+      <span class="name"> Name: {{ability.ability.name}} </span>
+      <span class="hidden"> Is hidden: {{ability.is_hidden}} </span>
+      <span class="slot"> Slot: {{ability.slot}} </span>
+    </div>
+  </li>
+</div>
+
+

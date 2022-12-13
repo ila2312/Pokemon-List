@@ -1,0 +1,17 @@
+nav a {
+  display: inline-block;
+  background-color: #201693;
+  color: #e1deff;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 15px;
+
+  &:hover {
+    color: white;
+    background-color: rgb(164, 18, 35);
+  }
+
+  &:active {
+    background-color: rgb(164, 18, 35);
+  }
+}
