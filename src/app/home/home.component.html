@@ -1,17 +1,26 @@
 <div class="top">
-  <input class="search-bar" #name placeholder="Search a Pokemon">
+  <input class="search-bar" [(ngModel)]="inputName" #name placeholder="Search a Pokemon" (keydown.enter)="getPokemon(name.value)">
   <button class="enter" (click)="getPokemon(name.value)"> Enter </button>
 </div>
 
-<div class="abilities">
-  <h2> Abilities </h2>
-  <li *ngFor="let ability of poke?.abilities">
+<label class="poke-name"> {{poke?.name}} </label>
+
+<!-- questo div appare solo se il pokemon è stato trovato (grazie ngIf) -->
+<div class="abilities" *ngIf="poke">
+  <label class="title"> Abilities </label>
+  <div class="li" *ngFor="let ability of poke?.abilities">
     <div class="ability">
       <span class="name"> Name: {{ability.ability.name}} </span>
       <span class="hidden"> Is hidden: {{ability.is_hidden}} </span>
       <span class="slot"> Slot: {{ability.slot}} </span>
     </div>
-  </li>
+  </div>
 </div>
+
+<!-- ho settato un flag che se è true mostra il testo -->
+<div class="load" *ngIf="isLoading">LOADING</div>
+
+<!-- se il pokemon è nullo o se loadin non ce mostra il testo -->
+<div class="not-found" *ngIf="!poke && !isLoading"> Pokemon not found </div>
 
 

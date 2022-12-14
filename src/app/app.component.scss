@@ -1,3 +1,17 @@
+.tot {
+  background-color: rgb(255, 230, 229);
+  width: fit-content;
+  border-radius: 10px;
+  border-style: double;
+  border-width: 15px;
+  border-color: rgb(164, 18, 35);
+}
+
+h1 {
+  color: rgb(164, 18, 35);
+  text-align: center;
+}
+
 nav a {
   display: inline-block;
   background-color: #201693;
@@ -5,13 +19,16 @@ nav a {
   border-radius: 5px;
   font-size: 20px;
   padding: 15px;
+  margin-left: 150px;
+
 
   &:hover {
     color: white;
     background-color: rgb(164, 18, 35);
-  }
+   }
 
   &:active {
     background-color: rgb(164, 18, 35);
   }
 }
+
