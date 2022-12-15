@@ -1,0 +1,27 @@
+<div>
+  <form [formGroup]="pokeForm" (ngSubmit)="onSubmit()">
+    <p>
+      <label for="name"> Name: </label>
+      <input id="name" type="text" formControlName="name">
+      </p>
+
+    <p>
+      <label for="type"> Type: </label>
+      <select id="type" name="type" formControlName="type">
+        <option value=""> Choose a type </option>
+        <option value="water"> Water </option>
+        <option value="ice"> Ice </option>
+        <option value="ghost"> Ghost </option>
+        <option value="dark"> Dark </option>
+        <option value="fairy"> Fairy </option>
+      </select>
+    </p>
+
+    <p>
+      <label for="evolutions"> Evolutions: </label>
+      <input id="evolutions" type="checkbox" formControlName="evolutions">
+    </p>
+  </form>
+
+  <button type="submit" (click)="onSubmit()" [disabled]="!pokeForm.valid"> Submit </button>
+</div>

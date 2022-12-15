@@ -9,9 +9,8 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+
   public poke: Pokemon | null = null;
-
-
 
   public inputName: string = '';
 
