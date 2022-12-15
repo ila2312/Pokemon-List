@@ -26,6 +26,7 @@ export class EditorComponent {
       )
       .subscribe((value) => {
         console.log(value);
+        this.pokeForm.reset(); //lasciare il value con la stringa vuota del form
       });
   }
 }
