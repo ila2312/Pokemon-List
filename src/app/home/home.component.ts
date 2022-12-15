@@ -11,13 +11,21 @@ import { PokemonService } from '../pokemon.service';
 export class HomeComponent implements OnInit {
   public poke: Pokemon | null = null;
 
+
+
   public inputName: string = '';
 
   public isLoading = false;
 
+  public key = "lastPoke";
+
   constructor(private pokemonService: PokemonService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const tmp = localStorage.getItem(this.key);
+    if(tmp)
+      this.poke = JSON.parse(tmp);
+  }
 
   getPokemon(name: string): void {
     this.isLoading = true;
@@ -25,18 +33,18 @@ export class HomeComponent implements OnInit {
     .pipe(
       //questo finalize è fatto in ogni caso della subscribe -> mentre aspetta che venga preso l'errore manda la scriatta LOADING
       finalize(() => {this.isLoading = false;})
-    )
-    //la subscribe prende 3 termini -> next, error, complete
-    .subscribe(
+    ).subscribe(
+      //la subscribe prende 3 termini -> next, error, complete
       (poke) => {
         this.poke = poke;
         console.log(poke);
+        this.inputName = '';
+        localStorage.setItem(this.key, JSON.stringify(this.poke));
       },
       (err) => {
         this.poke = null;
       }
-    );
 
-    this.inputName = '';
+    );
   }
 }

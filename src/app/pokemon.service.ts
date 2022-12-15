@@ -11,7 +11,7 @@ import { Pokemon } from './pokemon';
 export class PokemonService {
 
   private pokeurl = 'https://pokeapi.co/api/v2/pokemon/';
-  private poke = 'https://pokeapi.co/api/v2/pokemon/ditto';
+  //private poke = 'https://pokeapi.co/api/v2/pokemon/ditto';
 
   constructor(private http: HttpClient) { }
 
