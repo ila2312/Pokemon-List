@@ -1,4 +1,4 @@
-<div>
+<div class="group">
   <form [formGroup]="pokeForm" (ngSubmit)="onSubmit()">
     <p>
       <label for="name"> Name: </label>
@@ -24,4 +24,8 @@
   </form>
 
   <button type="submit" (click)="onSubmit()" [disabled]="!pokeForm.valid"> Submit </button>
+
+  <!-- <div class="square" [ngStyle]="currentStyles"></div> -->
+  <div class="square" [ngClass]="{'greenSquare': requestOk, 'redSquare': !requestOk}"></div>
+
 </div>

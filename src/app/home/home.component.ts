@@ -26,6 +26,11 @@ export class HomeComponent implements OnInit {
       this.poke = JSON.parse(tmp);
   }
 
+  clearStorage() {
+    this.poke = null;
+    localStorage.clear();
+  }
+
   getPokemon(name: string): void {
     this.isLoading = true;
     this.pokemonService.getPokemon(name)

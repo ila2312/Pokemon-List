@@ -1,6 +1,7 @@
 <div class="top">
   <input class="search-bar" [(ngModel)]="inputName" #name placeholder="Search a Pokemon" (keydown.enter)="getPokemon(name.value)">
   <button class="enter" (click)="getPokemon(name.value)"> Enter </button>
+  <button class="clean" (click)="clearStorage()"> Clean </button>
 </div>
 
 <label class="poke-name"> {{poke?.name}} </label>
